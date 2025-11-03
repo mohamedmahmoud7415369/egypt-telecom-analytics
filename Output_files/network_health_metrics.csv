@@ -1,4 +1,4 @@
-git branch -M mainoperator,date,avg_sentiment,daily_complaints,avg_likes,avg_replies,network_health_score,dominant_complaint_category,complaint_trend_7d
+operator,date,avg_sentiment,daily_complaints,avg_likes,avg_replies,network_health_score,dominant_complaint_category,complaint_trend_7d
 etisalat,2025-09-04,-0.159,1,0.0,5.0,100.0,internet,1.0
 etisalat,2025-09-06,0.16,1,8.0,4.0,100.0,calls,1.0
 etisalat,2025-09-07,-0.262,1,1.0,3.0,100.0,internet,1.0
