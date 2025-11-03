@@ -1,0 +1,5 @@
+operator,avg_sentiment,total_complaints,avg_likes,avg_replies,network_health_score,most_common_category,performance_rating
+etisalat,-0.327,91,6.571,2.484,100.0,internet,Excellent
+orange,-0.308,222,7.878,2.599,99.98,billing,Excellent
+vodafone,-0.299,230,7.813,2.4,99.959,customer_service,Excellent
+we,-0.247,57,7.035,2.772,100.0,balance,Excellent
