@@ -50,7 +50,8 @@ OS: Windows 10+, macOS 10.14+, or Ubuntu 18.04+
 
 🏗 Data Architecture
 Complete Data Flow
-![alt text](Egypt_Telecom_Analytics.png)
+
+(Egypt_Telecom_Analytics.png)
 
 Detailed Architecture Components
 1. Data Collection Layer
