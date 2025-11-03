@@ -1,14 +1,13 @@
-Egypt Telecom Analytics Platform
+## Egypt Telecom Analytics Platform
 
-📋 Project Overview
+# 📋 Project Overview
+
 A comprehensive data analytics platform that monitors and analyzes Egyptian telecommunications customer experience using synthetic data simulating real-world social media complaints and app reviews. This project demonstrates end-to-end data engineering capabilities from data collection to interactive visualization.
 
-https://img.shields.io/badge/Architecture-Data%2520Pipeline-blue
-https://img.shields.io/badge/Python-3.9%252B-green
-https://img.shields.io/badge/Visualization-Streamlit-red
+# 🎯 Objectives
 
-🎯 Objectives
-Primary Goals
+Primary Goals:
+
 Monitor Customer Experience: Track customer complaints and sentiment across major Egyptian telecom operators
 
 Performance Benchmarking: Compare operator performance using composite health scores
@@ -26,10 +25,13 @@ Competitive Intelligence: Benchmark against other telecom providers
 
 Resource Allocation: Guide customer service and technical support investments
 
-🛠 Requirements
+# 🛠 Requirements
+
 Technical Stack
 python
+
 # Core Dependencies
+
 python = ">=3.9"
 pandas = "==2.0.3"
 duckdb = "==0.9.1"
@@ -48,16 +50,8 @@ OS: Windows 10+, macOS 10.14+, or Ubuntu 18.04+
 
 🏗 Data Architecture
 Complete Data Flow
-text
-┌─────────────────┐    ┌──────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   DATA SOURCES  │ →  │  ETL PIPELINE    │ →  │ DATA WAREHOUSE   │ →  │  VISUALIZATION  │
-│                 │    │                  │    │                  │    │                 │
-│ • Synthetic     │    │ • Data Cleaning  │    │ • DuckDB         │    │ • Streamlit     │
-│   Data          │    │ • Transformation │    │ • Star Schema    │    │ • Plotly Charts │
-│ • Social Media  │    │ • Enrichment     │    │ • Analytics      │    │ • Dashboards    │
-│ • App Reviews   │    │ • ML Features    │    │ • ML Ready       │    │ • Filters       │
-│ • Public APIs   │    └──────────────────┘    └──────────────────┘    └─────────────────┘
-└─────────────────┘
+![alt text](Egypt_Telecom_Analytics.png)
+
 Detailed Architecture Components
 1. Data Collection Layer
 python
