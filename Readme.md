@@ -2,64 +2,65 @@
 
 **🇪🇬 Egyptian Telecom Customer Experience Analytics Platform**
 
-A comprehensive data analytics and visualization toolkit designed to analyze Egypt’s telecommunications ecosystem. It processes, cleans, and visualizes data on network performance, customer experience, and market dynamics — empowering data-driven decisions for telecom operators and analysts.
+A simplified data analytics toolkit for processing, analyzing, and visualizing telecom data in Egypt. The focus is on customer experience, network performance, and business insights to support decision-making.
 
 ---
 
 ## 🧭 Table of Contents
 
-* [📘 Project Overview](#-project-overview)
-* [✨ Key Features](#-key-features)
-* [📂 Repository Structure](#-repository-structure)
-* [⚙️ Getting Started](#%EF%B8%8F-getting-started)
-
-  * [🧰 Prerequisites](#-prerequisites)
-  * [⬇️ Installation](#%EF%B8%8F-installation)
-* [🧩 Configuration](#-configuration)
-* [🚀 Usage](#-usage)
-
-  * [🛰️ Run Data Collection](#%EF%B8%8F-run-data-collection)
-  * [📈 Run Analysis](#-run-analysis)
-  * [📊 Generate Reports](#-generate-reports)
-* [🌐 Data Sources](#-data-sources)
-* [🧪 Testing](#-testing)
-* [🤝 Contributing](#-contributing)
-* [🗺️ Roadmap](#%EF%B8%8F-roadmap)
-* [📜 License](#-license)
-* [👨‍💻 Author & Support](#-author--support)
+* [Project Overview](#project-overview)
+* [Key Features](#key-features)
+* [Data Architecture](#data-architecture)
+* [Repository Structure](#repository-structure)
+* [Getting Started](#getting-started)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
 
 ---
 
 ## 📘 Project Overview
 
-![](https://cdn-icons-png.flaticon.com/512/2965/2965358.png)
+<img src="https://cdn-icons-png.flaticon.com/512/2965/2965358.png" width="40"/>
 
-This repository includes scripts, data pipelines, and notebooks that:
+This repository collects, cleans, and analyzes telecom data such as:
 
-* Collect telecom data (network KPIs, pricing, customer feedback, coverage maps)
-* Normalize and integrate diverse data sources
-* Compute KPIs for **latency, throughput, dropped calls, churn indicators**
-* Visualize patterns and generate reports for decision-makers
+* Network KPIs (latency, throughput, call drops)
+* Pricing and offers from operators
+* Customer satisfaction and complaints
 
-🧱 The design is modular — new scrapers, ETL pipelines, and dashboards can be easily added.
+The design is modular to easily extend with new data sources and reports.
 
 ---
 
 ## ✨ Key Features
 
-💡 **Data Engineering & ETL** – Automated data pipelines for raw and structured data.
+* Automated data collection and cleaning
+* KPI and performance analytics
+* Market share comparisons
+* Customer experience insights
+* CSV/Excel report generation
 
-📊 **Market Analytics** – Compare operator performance and visualize market share.
+<img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" width="40"/>
 
-🌍 **Network KPIs** – Measure and monitor performance across Egyptian regions.
+---
 
-📉 **Churn & Satisfaction Models** – Predictive analytics for customer retention.
+## 🧱 Data Architecture
 
-📦 **Reporting Tools** – Export insights to CSV, Excel, or dashboards.
+<img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png" width="40"/>
 
-🧠 **Exploratory Notebooks** – For advanced analytics and visualization.
+**Simple ETL Pipeline:**
 
-![](https://cdn-icons-png.flaticon.com/512/942/942748.png)
+```
+     📡 Data Sources → 🧰 ETL & Cleaning → 📊 Analytics → 📈 Reports
+```
+
+**Stages:**
+
+1. **Data Collection:** Scrape and gather telecom data.
+2. **Transformation:** Clean and normalize datasets.
+3. **Storage:** Save processed data locally or in a database.
+4. **Analysis & Visualization:** Generate insights, KPIs, and visual reports.
 
 ---
 
@@ -67,143 +68,67 @@ This repository includes scripts, data pipelines, and notebooks that:
 
 ```
 egypt-telecom-analytics/
-├── Data_Arch/           # 🧮 Data architecture & ETL modules
-├── Output_files/        # 📁 Processed datasets, charts, and reports
-├── Script/              # 🤖 Scrapers & automation scripts
-├── database/            # 🗃️ Sample / local DBs
-├── notebooks/           # 📓 Jupyter notebooks for analysis
-├── requirements_minimal.txt
-└── README.md            # 📘 This file
+├── Data_Arch/        # ETL and analytics modules
+├── Output_files/     # Cleaned data and reports
+├── Script/           # Data collection scripts
+├── notebooks/        # Analysis notebooks
+└── requirements_minimal.txt
 ```
-
-![](https://cdn-icons-png.flaticon.com/512/4149/4149675.png)
 
 ---
 
 ## ⚙️ Getting Started
 
-### 🧰 Prerequisites
+**Requirements:**
 
-* Python **3.8+**
-* Git
-* (Optional) PostgreSQL / SQLite
+* Python 3.8+
 
-### ⬇️ Installation
+**Installation:**
 
 ```bash
 git clone https://github.com/mohamedmahmoud7415369/egypt-telecom-analytics.git
 cd egypt-telecom-analytics
-python -m venv venv
-source venv/bin/activate  # macOS/Linux
-venv\Scripts\Activate.ps1 # Windows
 pip install -r requirements_minimal.txt
 ```
-
-![](https://cdn-icons-png.flaticon.com/512/1828/1828884.png)
-
----
-
-## 🧩 Configuration
-
-Create a `config.py` file in the project root:
-
-```python
-API_KEYS = {
-    'provider1': 'YOUR_API_KEY_HERE'
-}
-DATABASE_URI = 'sqlite:///data/local.db'
-ANALYSIS_CONFIG = {
-    'timeframe': '30d',
-    'regions': ['cairo', 'alexandria', 'giza']
-}
-```
-
-Keep secrets secure using `.env` or environment variables.
 
 ---
 
 ## 🚀 Usage
 
-### 🛰️ Run Data Collection
+**Run data collection:**
 
 ```bash
-python Script/collect_data.py --config config.py --output Output_files/raw_data.csv
+python Script/collect_data.py
 ```
 
-### 📈 Run Analysis
+**Run analysis:**
 
 ```python
 from Data_Arch.market_analysis import MarketAnalyzer
-analyzer = MarketAnalyzer(config='config.py')
-report = analyzer.compute_kpis(timeframe='30d')
-report.to_csv('Output_files/kpi_summary.csv')
+analyzer = MarketAnalyzer()
+analyzer.compute_kpis()
 ```
 
-### 📊 Generate Reports
-
-![](https://cdn-icons-png.flaticon.com/512/711/711284.png)
-
-Use provided utilities to export dashboards and charts from `Output_files/`.
-
----
-
-## 🌐 Data Sources
-
-* 📶 Operator APIs & Open Data
-* 🌍 Speed test and coverage data
-* 🗣️ Customer complaints and sentiment sources
-* 💸 Public pricing & offer pages (scraped responsibly)
-
-⚠️ Always comply with **robots.txt** and terms of service.
-
----
-
-## 🧪 Testing
-
-Run tests using `pytest`:
-
-```bash
-pytest -q
-```
-
-Automated CI/CD setup coming soon.
+**Reports:** Generated under `Output_files/`.
 
 ---
 
 ## 🤝 Contributing
 
-1. Fork the repo
-2. Create a branch → `git checkout -b feature/your-feature`
-3. Commit changes → `git commit -m "Add new analysis module"`
-4. Push and open a PR
-
-![](https://cdn-icons-png.flaticon.com/512/847/847969.png)
-
----
-
-## 🗺️ Roadmap
-
-* ⚡ CI/CD integration
-* 🧠 AI-based churn prediction
-* ☁️ Cloud data warehouse (BigQuery / Snowflake)
-* 📊 Streamlit / Superset dashboards
-* 🧩 Kafka & Airflow integration for real-time data
+1. Fork the repository
+2. Create a branch (`feature/new-feature`)
+3. Commit your changes
+4. Open a Pull Request
 
 ---
 
 ## 📜 License
 
-🪪 MIT License — see `LICENSE` file for details.
+Licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 Author & Support
-
-**Mohamed Mahmoud** — Project Creator & Maintainer
-📧 Contact via [GitHub](https://github.com/mohamedmahmoud7415369)
-
-![](https://cdn-icons-png.flaticon.com/512/1006/1006771.png)
-
----
+**Author:** Mohamed Mahmoud
+📧 [GitHub Profile](https://github.com/mohamedmahmoud7415369)
 
 *Last updated: 2025-11-03*
